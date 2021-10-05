@@ -1,0 +1,11 @@
+.headerbutton{
+    display: flex;
+    justify-content: start;
+}
+.buttons {
+    margin-left: 5px;
+    margin-bottom: 7px
+}
+.mt-7{
+    margin-top: 7px;
+}
