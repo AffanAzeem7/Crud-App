@@ -4,8 +4,20 @@
 }
 .buttons {
     margin-left: 5px;
-    margin-bottom: 7px
+    margin-bottom: 7px;
+    margin-top: 5px
 }
 .mt-7{
     margin-top: 7px;
+}
+.table {
+    margin-top: 20px;
+    height: 80%; overflow: auto;
+    max-height: 363px;
+}
+.card{
+    margin-top: 75px; height: 500px;
+}
+.cursor {
+    cursor: pointer;
 }

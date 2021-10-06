@@ -11,18 +11,27 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzIconModule } from 'ng-zorro-antd/icon';
+import { NzModalModule } from 'ng-zorro-antd/modal';
+import { NzFormModule } from 'ng-zorro-antd/form';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+
 
 @NgModule({
   declarations: [PatientConsentsListingComponent, PatientConsentsTableComponent, AddPatientConsentsComponent],
   imports: [
     CommonModule,
     PatientConsentsRoutingModule,
+    ReactiveFormsModule,
     NzTableModule,
     NzGridModule,
     NzDividerModule,
     NzCardModule,
     NzButtonModule,
-    NzIconModule
+    NzIconModule,
+    NzModalModule,
+    NzFormModule,
+    NzMessageModule
   ]
 })
 export class PatientConsentsModule { }

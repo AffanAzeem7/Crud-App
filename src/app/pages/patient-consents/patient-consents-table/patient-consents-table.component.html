@@ -1,32 +1,36 @@
 <div nz-row>
     <div nz-col nzSpan="12" nzOffset="6">
-        <nz-card  style="margin-top: 75px;">
+        <nz-card  class="card">
             <div class="headerbutton">
-                <h4 class="mt-7">HPPA</h4> 
+                <h4 class="mt-7">HIPAA</h4> 
                     <span class="buttons">
-                        <button nz-button nzType="primary" [nzSize]="size" nzShape="round">
+                        <button nz-button nzType="primary" [nzSize]="size" nzShape="round" (click)="addHppa(true)">
                             <i nz-icon nzType="plus" nzTheme="outline"></i>
                           </button>
                     </span>
             </div>
-            <nz-table #basicTable [nzData]="data"> 
+            <nz-table #basicTable [nzData]="data" class="table"> 
                 <thead>
                   <tr>
                     <th>Name</th>
                     <th>UserName</th>
-                    <th>Email</th>
+                    <th>Attach/View</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let data of basicTable.data">
+                  <tr *ngFor="let data of basicTable.data; let i = index">
                     <td>{{ data.name }}</td>
                     <td>{{ data.username }}</td>
-                    <td>{{ data.email }}</td>
                     <td>  
-                      <a>Edit</a>
+                      <i nz-icon nzType="upload" nzTheme="outline" class="cursor"></i>
                       <nz-divider nzType="vertical"></nz-divider>
-                      <a>Delete</a>
+                      <i nz-icon nzType="eye" nzTheme="outline" class="cursor"></i>
+                    </td>
+                    <td>  
+                      <a (click)="Edit(data)">Edit</a>
+                      <nz-divider nzType="vertical"></nz-divider>
+                      <a (click)="delete(i)">Delete</a>
                     </td>
                   </tr>
                 </tbody>
@@ -34,3 +38,4 @@
         </nz-card>
     </div>
 </div>
+<app-add-patient-consents [addNewConsents]="isPatientConsents" [EditConsents]="editPatientConsents" (PatientConsents)="addHppa($event)" (newPatient)="addNewPatient($event)" (updatePatient)="updatePatient($event)"></app-add-patient-consents>

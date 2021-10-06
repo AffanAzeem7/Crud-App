@@ -36,5 +36,8 @@ export class PatientConsentsListingComponent implements OnInit {
     this.container.clear();
     this.componentRef = this.container.createComponent(factory);
     this.componentRef.instance.data = data;
+    this.componentRef.instance.dataChanges.subscribe((res:any) => {
+    this.renderingComponent(PatientConsentsTableComponent, res);
+    })
 }
 }
